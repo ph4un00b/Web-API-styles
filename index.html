@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+    <script type="module" src="https://cdn.skypack.dev/twind/shim"></script>
+  </head>
+  <body>
+    <ul class="pl-[2rem]">
+      <li>
+        <section>
+          <pre class="text-red-400">transform: dates</pre>
+          <br />
+          <p>iso:</p>
+          <code class="text-blue-400">
+            <xmp>var date = new Date().toISOString()</xmp>
+          </code>
+          <script>
+            var date = new Date().toISOString();
+            document.currentScript.outerHTML = `<pre class="text-green-500">${date}</pre>`;
+          </script>
+          <br />
+          <p>humanize:</p>
+          <code class="text-blue-400">
+            <xmp
+>var date = new Date().toLocaleDateString('en', { 
+  weekday: 'long',
+  year: 'numeric', 
+  month: 'long', 
+  day: 'numeric'
+});</xmp
+            >
+          </code>
+
+          <script>
+            var date = new Date().toLocaleDateString('en', {
+              weekday: 'long',
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            });
+            document.currentScript.outerHTML = `<pre class="text-green-500">${date}</pre>`;
+          </script>
+        </section>
+      </li>
+    </ul>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
