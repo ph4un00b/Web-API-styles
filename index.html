@@ -13,13 +13,17 @@
         <section>
           <pre class="text-red-400">transform: dates</pre>
           <br />
+          <p class="text-yellow-300">input type"datetime-local"</p>
+          <input type="datetime-local" />
+          <br />
+          <br />
           <p>iso:</p>
           <code class="text-blue-400">
             <xmp>var date = new Date().toISOString()</xmp>
           </code>
           <script>
             var date = new Date().toISOString();
-            document.currentScript.outerHTML = `<pre class="text-green-500">${date}</pre>`;
+            document.currentScript.outerHTML = `<pre class="text-green-500"><marquee>${date}<marquee/></pre>`;
           </script>
           <br />
           <p>humanize:</p>
@@ -41,7 +45,7 @@
               month: 'long',
               day: 'numeric',
             });
-            document.currentScript.outerHTML = `<pre class="text-green-500">${date}</pre>`;
+            document.currentScript.outerHTML = `<pre class="text-green-500"><marquee>${date}<marquee/></pre>`;
           </script>
         </section>
       </li>
