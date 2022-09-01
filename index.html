@@ -13,7 +13,7 @@
         <section>
           <pre class="text-red-400">transform: dates</pre>
           <br />
-          <p class="text-yellow-300">input type"datetime-local"</p>
+          <marquee class="text-yellow-300">input type"datetime-local"</marquee>
           <input type="datetime-local" />
           <br />
           <br />
@@ -23,13 +23,14 @@
           </code>
           <script>
             var date = new Date().toISOString();
-            document.currentScript.outerHTML = `<pre class="text-green-500"><marquee>${date}<marquee/></pre>`;
+            document.currentScript.outerHTML = `<pre class="text-green-500">${date}</pre>`;
           </script>
           <br />
           <p>humanize:</p>
           <code class="text-blue-400">
             <xmp
->var date = new Date().toLocaleDateString('en', { 
+>var date = new Date()
+.toLocaleDateString('en', { 
   weekday: 'long',
   year: 'numeric', 
   month: 'long', 
@@ -45,7 +46,29 @@
               month: 'long',
               day: 'numeric',
             });
-            document.currentScript.outerHTML = `<pre class="text-green-500"><marquee>${date}<marquee/></pre>`;
+            document.currentScript.outerHTML = `<pre class="text-green-500">${date}</pre>`;
+          </script>
+          <p class="pt-[1.2rem]">timezone:</p>
+          <code class="text-blue-400">
+            <xmp
+>var date = new Date()
+.toLocaleDateString('es', { 
+  hour12: false,
+  hour: 'numeric',
+  minute: 'numeric'
+  timeZone: 'Europe/Madrid'
+});</xmp
+            >
+          </code>
+
+          <script>
+            var date = new Date().toLocaleDateString('es', {
+              hour12: false,
+              hour: 'numeric',
+              minute: 'numeric',
+              timeZone: 'Europe/Madrid',
+            });
+            document.currentScript.outerHTML = `<pre class="text-green-500">${date}</pre>`;
           </script>
         </section>
       </li>
